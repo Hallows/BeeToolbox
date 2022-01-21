@@ -11,4 +11,4 @@ def getAuth():
     cookies = res.cookies
     print(res)
     print(cookies)
-
+    headers = {':authority': 'my-app/0.0.1'}
