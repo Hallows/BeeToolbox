@@ -8,4 +8,7 @@ def getAuth():
     ips_password = sql.getPassWord()
     print(URL)
     res = requests.get(URL, verify=False)
+    cookies = res.cookies
     print(res)
+    print(cookies)
+
