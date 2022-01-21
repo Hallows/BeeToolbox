@@ -1,7 +1,6 @@
 import sqlite3
 
-dbLocation = '../DataBase/btb.db'
-
+dbLocation = './DataBase/btb.db'
 
 # 获取用户名
 def getMailAddr():
