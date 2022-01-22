@@ -1,4 +1,4 @@
-from Module import login
+from Module import GoonsWorm
 
 proxy = '127.0.0.1:7890'
 proxies = {
@@ -6,5 +6,4 @@ proxies = {
     "https": "http://%(proxy)s/" % {'proxy': proxy}
 }
 
-paps=login.getAdpap(proxies)
-print("you got {} paps this months!".format(paps))
+GoonsWorm.formumsLogin(proxies)
