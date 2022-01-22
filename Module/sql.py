@@ -51,3 +51,17 @@ def getForumsURL():
     result = cursor.fetchone()
     db.close()
     return result[1]
+
+
+def getAdURL():
+    try:
+        db = sqlite3.connect(dbLocation)
+    except:
+        print('can not open database')
+        return
+    cursor = db.cursor()
+    command = "SELECT * FROM btb WHERE Setting = 'AdURL';"
+    cursor.execute(command)
+    result = cursor.fetchone()
+    db.close()
+    return result[1]
