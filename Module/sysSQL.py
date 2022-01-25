@@ -2,6 +2,7 @@ import sqlite3
 
 dbLocation = './DataBase/btb.db'
 
+
 # 获取用户名
 def getMailAddr():
     try:
@@ -21,6 +22,7 @@ def getMailAddr():
         return - 1  # 权限错误
 
 
+# 获取密码
 def getPassWord():
     try:
         db = sqlite3.connect(dbLocation)
@@ -39,6 +41,7 @@ def getPassWord():
         return - 1  # 权限错误
 
 
+# 获取论坛网址
 def getForumsURL():
     try:
         db = sqlite3.connect(dbLocation)
@@ -53,7 +56,23 @@ def getForumsURL():
     return result[1]
 
 
+# 获取aDashBoard网址
 def getAdURL():
+    try:
+        db = sqlite3.connect(dbLocation)
+    except:
+        print('can not open database')
+        return
+    cursor = db.cursor()
+    command = "SELECT * FROM btb WHERE Setting = 'AdURL';"
+    cursor.execute(command)
+    result = cursor.fetchone()
+    db.close()
+    return result[1]
+
+
+# 获取jabber相关
+def getJabber():
     try:
         db = sqlite3.connect(dbLocation)
     except:
