@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.2">
+  <object class="tk.Toplevel" id="mainWindow">
+    <property name="height">500</property>
+    <property name="relief">flat</property>
+    <property name="title" translatable="yes">BeeToolBox</property>
+    <property name="width">800</property>
+    <child>
+      <object class="ttk.Labelframe" id="Labelframe_login">
+        <property name="height">200</property>
+        <property name="text" translatable="yes">登录面板</property>
+        <property name="width">200</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="height">200</property>
+          <property name="relheight">0.0</property>
+          <property name="width">300</property>
+          <property name="x">3</property>
+          <property name="y">0</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="Label_name_jabber">
+            <property name="text" translatable="yes">Jabber账号</property>
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="x">5</property>
+              <property name="y">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="Label_name_ad">
+            <property name="text" translatable="yes">AD注册邮箱</property>
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="x">5</property>
+              <property name="y">25</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="Entry_jabberName">
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="width">180</property>
+              <property name="x">100</property>
+              <property name="y">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="Entry_adName">
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="width">180</property>
+              <property name="x">100</property>
+              <property name="y">25</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="Label_passwod">
+            <property name="text" translatable="yes">ESA统一密码</property>
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="x">5</property>
+              <property name="y">50</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="Entry_password">
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="width">180</property>
+              <property name="x">100</property>
+              <property name="y">50</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Checkbutton" id="Checkbutton_savePassword">
+            <property name="text" translatable="yes">保存此次输入内容到本地数据库</property>
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="x">5</property>
+              <property name="y">80</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="Button_readInfo">
+            <property name="text" translatable="yes">读本地数据</property>
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="x">30</property>
+              <property name="y">120</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="Button_login">
+            <property name="text" translatable="yes">登录</property>
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="x">160</property>
+              <property name="y">120</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Labelframe" id="Labelframe_pap">
+        <property name="height">200</property>
+        <property name="text" translatable="yes">PAP信息</property>
+        <property name="width">200</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="height">290</property>
+          <property name="width">300</property>
+          <property name="x">3</property>
+          <property name="y">200</property>
+        </layout>
+        <child>
+          <object class="ttk.Button" id="Button_checkPap">
+            <property name="state">disabled</property>
+            <property name="text" translatable="yes">刷新PAP统计</property>
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="x">95</property>
+              <property name="y">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="Label_pap">
+            <property name="text" translatable="yes">需要登录以获取信息！
+当前待定PAP共X个
+
+本月PAP共 X 个
+
+本月战略PAPX个，其他PAPX个
+
+过去30天内共获得PAPX个，其中战略PAPX个。
+过去60天内共获得PAPX个，其中战略PAPX个。
+过去90天内共获得PAPX个，其中战略PAPX个。</property>
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="x">5</property>
+              <property name="y">40</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="Label_papWarn">
+            <property name="compound">top</property>
+            <property name="foreground">#ff0000</property>
+            <property name="text" translatable="yes">警告！您本月的出勤要求尚未合格！</property>
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="x">5</property>
+              <property name="y">240</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
