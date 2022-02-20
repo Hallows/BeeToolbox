@@ -6,7 +6,6 @@ from Module import sysSQL
 
 
 def readInfo():
-
     mailAddr = sysSQL.getMailAddr()
     if mailAddr is None:
         result = -1
@@ -27,3 +26,13 @@ def readInfo():
               'password': password}
     return result
 
+def login(jid,mailAddr,password):
+    logging.basicConfig(level=logging.DEBUG,
+                        format='%(levelname)-8s %(message)s')
+
+    xmpp = GoonsJabber.EchoBot(clientJid=jid, toJid=sysSQL.getBotJid(), jabberPass=password)
+    xmpp.connect()
+    xmpp.process(block=False)
+    time.sleep(10)
+    print(xmpp.boundjid)
+    xmpp.xmpp_send()

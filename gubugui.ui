@@ -105,6 +105,7 @@
         </child>
         <child>
           <object class="ttk.Button" id="Button_login">
+            <property name="command" type="command" cbtype="simple">on_button_login_clicked</property>
             <property name="text" translatable="yes">登录</property>
             <layout manager="place">
               <property name="anchor">nw</property>

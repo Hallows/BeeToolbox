@@ -4,10 +4,10 @@ from sleekxmpp.exceptions import IqError, IqTimeout
 
 class EchoBot(ClientXMPP):
 
-    def __init__(self):
-        self.clientJid = 'azika_gaptain@goonfleet.com'
-        self.toJid = 'directorbot@goonfleet.com'
-        self.jabberPass = 'LOVE@alan1995'
+    def __init__(self, clientJid, toJid, jabberPass):
+        self.clientJid = clientJid
+        self.toJid = toJid
+        self.jabberPass = jabberPass
 
         ClientXMPP.__init__(self, self.clientJid, self.jabberPass)
 

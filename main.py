@@ -44,6 +44,9 @@ class MyApplication:
         self.adName.set(info['mailAddr'])
         self.password.set(info['password'])
 
+    def on_button_login_clicked(self):
+        ui_processor.login(jid=self.jabberName.get(), mailAddr= self.adName.get(), password=self.password.get())
+
 
 if __name__ == '__main__':
     app = MyApplication()
@@ -51,13 +54,5 @@ if __name__ == '__main__':
     # Ideally use optparse or argparse to get JID,
     # password, and log level.
 
-    # logging.basicConfig(level=logging.DEBUG,
-    #                     format='%(levelname)-8s %(message)s')
 
-    # xmpp = GoonsJabber.EchoBot()
-    # xmpp.connect()
-    # xmpp.process(block=False)
-    # time.sleep(10)
-    # print(xmpp.boundjid)
-    # xmpp.xmpp_send()
 
