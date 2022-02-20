@@ -1,10 +1,6 @@
-import time
-import logging
-from Module import GoonsJabber
-from Module import GoonsWorm
-
 import tkinter as tk
 import pygubu
+import ui_processor
 
 proxy = '127.0.0.1:7890'
 proxies = {
@@ -28,11 +24,25 @@ class MyApplication:
         # 3: Create the toplevel widget.
         self.mainwindow = builder.get_object('mainWindow')
 
+        builder.connect_callbacks(self)
+
+        guivars = ('jabberName', 'adName', 'password'
+                   )
+
+        builder.import_variables(self, guivars)
+
+
     def quit(self, event=None):
         self.mainwindow.quit()
 
     def run(self):
         self.mainwindow.mainloop()
+
+    def on_button_readInfo_clicked(self):
+        info = ui_processor.readInfo()
+        self.jabberName.set(info['jid'])
+        self.adName.set(info['mailAddr'])
+        self.password.set(info['password'])
 
 
 if __name__ == '__main__':

@@ -71,16 +71,35 @@ def getAdURL():
     return result[1]
 
 
-# 获取jabber相关
-def getJabber():
+# 获取jabber用户名
+def getJabberName():
     try:
         db = sqlite3.connect(dbLocation)
     except:
         print('can not open database')
         return
     cursor = db.cursor()
-    command = "SELECT * FROM btb WHERE Setting = 'AdURL';"
+    command = "SELECT * FROM btb WHERE Setting = 'jabberName';"
+    cursor.execute(command)
+    result = cursor.fetchone()
+    fromjid = result[1]
+    command = "SELECT * FROM btb WHERE Setting = 'jabberServer';"
     cursor.execute(command)
     result = cursor.fetchone()
     db.close()
-    return result[1]
+    fromjid = fromjid + '@' + result[1]
+    return fromjid
+
+def getBotJid():
+    try:
+        db = sqlite3.connect(dbLocation)
+    except:
+        print('can not open database')
+        return
+    cursor = db.cursor()
+    command = "SELECT * FROM btb WHERE Setting = 'botJid';"
+    cursor.execute(command)
+    result = cursor.fetchone()
+    db.close()
+    botJid = result[1]
+    return botJid

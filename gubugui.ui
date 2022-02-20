@@ -40,6 +40,7 @@
         </child>
         <child>
           <object class="ttk.Entry" id="Entry_jabberName">
+            <property name="textvariable">string:jabberName</property>
             <layout manager="place">
               <property name="anchor">nw</property>
               <property name="width">180</property>
@@ -50,6 +51,7 @@
         </child>
         <child>
           <object class="ttk.Entry" id="Entry_adName">
+            <property name="textvariable">string:adName</property>
             <layout manager="place">
               <property name="anchor">nw</property>
               <property name="width">180</property>
@@ -70,6 +72,7 @@
         </child>
         <child>
           <object class="ttk.Entry" id="Entry_password">
+            <property name="textvariable">string:password</property>
             <layout manager="place">
               <property name="anchor">nw</property>
               <property name="width">180</property>
@@ -90,7 +93,9 @@
         </child>
         <child>
           <object class="ttk.Button" id="Button_readInfo">
+            <property name="command" type="command" cbtype="simple">on_button_readInfo_clicked</property>
             <property name="text" translatable="yes">读本地数据</property>
+            <bind sequence="&lt;1&gt;" handler="callback" add="" />
             <layout manager="place">
               <property name="anchor">nw</property>
               <property name="x">30</property>
