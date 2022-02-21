@@ -71,8 +71,9 @@
           </object>
         </child>
         <child>
-          <object class="ttk.Entry" id="Entry_password">
-            <property name="textvariable">string:password</property>
+          <object class="ttk.Entry" id="Entry_passwd">
+            <property name="takefocus">false</property>
+            <property name="textvariable">string:passwd</property>
             <layout manager="place">
               <property name="anchor">nw</property>
               <property name="width">180</property>
@@ -114,6 +115,18 @@
             </layout>
           </object>
         </child>
+        <child>
+          <object class="ttk.Label" id="label_loginNotice">
+            <property name="takefocus">false</property>
+            <property name="text" translatable="yes">欢迎使用BeeToolBox</property>
+            <property name="textvariable">string:loginNotice</property>
+            <layout manager="place">
+              <property name="anchor">center</property>
+              <property name="x">135</property>
+              <property name="y">165</property>
+            </layout>
+          </object>
+        </child>
       </object>
     </child>
     <child>
@@ -130,7 +143,9 @@
         </layout>
         <child>
           <object class="ttk.Button" id="Button_checkPap">
+            <property name="command" type="command" cbtype="simple">on_button_checkPap_clicked</property>
             <property name="state">disabled</property>
+            <property name="takefocus">false</property>
             <property name="text" translatable="yes">刷新PAP统计</property>
             <layout manager="place">
               <property name="anchor">nw</property>
@@ -170,6 +185,20 @@
             </layout>
           </object>
         </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Labelframe" id="labelframe_ping">
+        <property name="height">200</property>
+        <property name="text" translatable="yes">Ping消息</property>
+        <property name="width">200</property>
+        <layout manager="place">
+          <property name="anchor">nw</property>
+          <property name="height">260</property>
+          <property name="width">497</property>
+          <property name="x">303</property>
+          <property name="y">0</property>
+        </layout>
       </object>
     </child>
   </object>
